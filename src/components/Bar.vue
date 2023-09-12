@@ -32,7 +32,16 @@ const calculateBackground = (isCurrent: boolean): Array<string> => {
 
     <!-- Column-->
     <div 
-      class="relative group w-[33px] rounded-sm hover:cursor-pointer" 
+      class="
+        relative 
+        group 
+        w-[33px] 
+        rounded-sm 
+        hover:cursor-pointer
+        
+        desktop:w-[50px]
+        desktop:rounded
+        " 
       :class="calculateBackground(isCurrent)"
       :style="calculateHeight(amount, maxValue)">
 
@@ -55,11 +64,14 @@ const calculateBackground = (isCurrent: boolean): Array<string> => {
         text-white     
         
         group-hover:block
+        desktop:text-sm
+        desktop:p-2
+        desktop:rounded
         "
         >${{ amount }}</p>
 
     </div>
-    <p class="text-xs text-medium-brown">{{ weekday }}</p>
+    <p class="text-xs text-medium-brown desktop:text-sm">{{ weekday }}</p>
   </div>
 </template>
 
