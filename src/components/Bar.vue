@@ -16,8 +16,10 @@ const calculateHeight = (amount: number, maxValue: number): { height: string } =
   } 
 }
 
-const calculateBackground = (isCurrent: boolean): string => {
-  return isCurrent ? 'bg-cyan' : 'bg-soft-red'
+const calculateBackground = (isCurrent: boolean): Array<string> => {
+  const current = ['bg-cyan', 'hover:bg-cyan-light']
+  const base = ['bg-soft-red', 'hover:bg-soft-red-light']
+  return isCurrent ? current : base
 }
 
 </script>
@@ -30,12 +32,32 @@ const calculateBackground = (isCurrent: boolean): string => {
 
     <!-- Column-->
     <div 
-      class="bg-soft-red w-[33px] rounded-sm" 
+      class="relative group w-[33px] rounded-sm hover:cursor-pointer" 
       :class="calculateBackground(isCurrent)"
       :style="calculateHeight(amount, maxValue)">
 
       <!-- Dummy space to prevent bar container from collapsing -->
       <p>&nbsp;</p>
+
+      <!-- Amount Tooltip -->
+      <p class="
+        absolute
+        hidden
+        bottom-full
+        left-1/2
+        -translate-x-1/2
+        mb-2
+        p-1 
+        text-xs 
+        text-center 
+        rounded-sm 
+        bg-dark-brown 
+        text-white     
+        
+        group-hover:block
+        "
+        >${{ amount }}</p>
+
     </div>
     <p class="text-xs text-medium-brown">{{ weekday }}</p>
   </div>
