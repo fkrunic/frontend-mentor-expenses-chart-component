@@ -37,7 +37,7 @@ onMounted(() => {
             v-for="bar of content"
             :amount="bar.amount"
             :max-value="maxValue"
-            :is-current="false"
+            :is-current="bar.day === 'wed'"
             :weekday="(bar.day as Weekday)"
             ></Bar>
         </div>
