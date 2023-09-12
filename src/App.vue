@@ -55,7 +55,7 @@ onMounted(() => {
           </div>
 
           <!-- Delta -->
-          <div class="flex flex-col items-end">
+          <div class="flex flex-col mt-4 justify-end items-end">
             <p class="text-sm font-bold text-dark-brown">+2.4%</p>
             <p class="text-sm text-medium-brown">from last month</p>
           </div>
